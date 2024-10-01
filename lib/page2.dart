@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:helloword/button.dart';
+import 'package:helloword/page1.dart';
 
 class Page3 extends StatelessWidget {
   const Page3({super.key});
@@ -17,18 +19,66 @@ class Page3 extends StatelessWidget {
                 color: Colors.cyan,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: ClipRect(
-                child: Container(
-                  height: 300,
-                  width: 450,
-                  decoration: BoxDecoration(
+              child: Stack(
+                children: [
+                  // L'image
+                  ClipRRect( // Utiliser ClipRRect pour arrondir les coins de l'image
                     borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(image: AssetImage('lib/Images/121e3bdfe45a786b957c86ee34f24a3061583ace-babe8.jpg'),
-                    fit: BoxFit.cover)
+                    child: Container(
+                      height: 300,
+                      width: 450,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('lib/Images/121e3bdfe45a786b957c86ee34f24a3061583ace-babe8.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  // Bouton à gauche
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Positioned(
+                          left: 10, // Positionné à 10 pixels du bord gauche
+                          top: 12, // Centré verticalement par rapport à l'image
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                backgroundColor: Colors.white
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) => Page2()
+                                ));
+                          },
+
+                            child: Icon(Icons.arrow_back_outlined, color: Colors.black,),
+                          ),
+                        ),
+
+                        Positioned(
+                          right : 10, // Positionné à 10 pixels du bord gauche
+                          top: 12, // Centré verticalement par rapport à l'image
+                          child: ElevatedButton(
+                            onPressed: () {
+                            },
+                            style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                backgroundColor: Colors.white
+                            ),
+                            child: Icon(Icons.favorite, color: Colors.red,),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.all(18.0),
               child: Row(
