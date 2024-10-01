@@ -170,65 +170,72 @@ class Page2 extends StatelessWidget {
                scrollDirection: Axis.horizontal,
                  child: Row(
                    children: [
-                     Padding(
-                         padding: EdgeInsets.only(left: 23, top:10,),
-                     child: Container(
-                       width: 300,
-                       height: 280,
-                       decoration: BoxDecoration(
-                         color: Colors.white,
-                         borderRadius: BorderRadius.circular(12),
-                       ),
-                       child: Column(
-                         children: [
-                           Container(
-                             width: 300,
-                             height: 200,
-                             decoration: BoxDecoration(
-                               image: DecorationImage(image: AssetImage('lib/Images/ulun-danu.jpg'),
+                     GestureDetector(
+                       onTap: () {
+                         Navigator.push(
+                             context, MaterialPageRoute(builder: (context) => const Page3()
+                         ));
+                       },
+                       child: Padding(
+                           padding: EdgeInsets.only(left: 23, top:10,),
+                       child: Container(
+                         width: 300,
+                         height: 280,
+                         decoration: BoxDecoration(
+                           color: Colors.white,
+                           borderRadius: BorderRadius.circular(12),
+                         ),
+                         child: Column(
+                           children: [
+                             Container(
+                               width: 300,
+                               height: 200,
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(image: AssetImage('lib/Images/ulun-danu.jpg'),
+                                 ),
                                ),
                              ),
-                           ),
-                           Padding(
-                               padding: EdgeInsets.only(right: 120, top: 13),
-                           child: Text(
-                               'Ulun Danu Temple',
-                           style: TextStyle(
-                             fontSize: 18,
-                             fontWeight: FontWeight.w500,
-                           ),
-                           )
-                           ),
-
-                           Row(
-                             children: [
-                               Padding(
-                                 padding: EdgeInsets.only(right: 0, top: 5),
-                               child: Icon(
-                                   Icons.star,
-                                 color: Colors.amber,
-                               ),
-                               ),
-                               Padding(
-                                 padding: EdgeInsets.only( right:  70,),
-                               child: Text('4.6(1079)'),),
-
-                               Padding(
-                                   padding: EdgeInsets.only(right: 0),
-                               child: Icon(
-                                 Icons.directions_car,
-                                 color: Colors.blue,
-                               ),
-                               ),
-
-                               Padding(
-                                 padding: EdgeInsets.only( right:30,),
-                                 child: Text('3.5km away'),),
-                             ],
-                           )
-                         ],
+                             Padding(
+                                 padding: EdgeInsets.only(right: 120, top: 13),
+                             child: Text(
+                                 'Ulun Danu Temple',
+                             style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.w500,
+                             ),
+                             )
+                             ),
+                       
+                             Row(
+                               children: [
+                                 Padding(
+                                   padding: EdgeInsets.only(right: 0, top: 5),
+                                 child: Icon(
+                                     Icons.star,
+                                   color: Colors.amber,
+                                 ),
+                                 ),
+                                 Padding(
+                                   padding: EdgeInsets.only( right:  70,),
+                                 child: Text('4.6(1079)'),),
+                       
+                                 Padding(
+                                     padding: EdgeInsets.only(right: 0),
+                                 child: Icon(
+                                   Icons.directions_car,
+                                   color: Colors.blue,
+                                 ),
+                                 ),
+                       
+                                 Padding(
+                                   padding: EdgeInsets.only( right:30,),
+                                   child: Text('3.5km away'),),
+                               ],
+                             )
+                           ],
+                         ),
                        ),
-                     ),
+                       ),
                      ),
 
                      Padding(
